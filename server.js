@@ -9,8 +9,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
-
-// Use environment variable for MongoDB connection
+/*
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,12 +23,12 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', UserSchema);
-
+*/
 app.get('/', (req, res) => {
     res.json({message: "Hello World!"});
 })
 
-
+/*
 // Register or update user
 app.post('/register', async (req, res) => {
     const { username, mobile } = req.body;
@@ -76,7 +75,7 @@ app.get('/users', async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
-
+*/
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
